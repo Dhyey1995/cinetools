@@ -67,10 +67,10 @@ class Homepage extends Component {
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                            {this.state.budgets.map(budget => {
+                                                            {this.state.budgets.map((budget , index) => {
                                                                 return ( <tr>
                                                                     <td>
-                                                                        <BudgetCard>{budget}</BudgetCard>
+                                                                        <BudgetCard key={index} >{budget}</BudgetCard>
                                                                     </td>
                                                                 </tr> )
                                                             })}

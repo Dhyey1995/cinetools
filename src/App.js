@@ -1,6 +1,7 @@
 import React , { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Homepage from './components/Homepage/index.js';
+import EditBudget from './components/EditBudget.js';
 
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
         return (
             <section>
               <Route exact path="/" component={Homepage} />
+              <Route exact path="/budgetEdit/:id" component={EditBudget} />
             </section>
         );
     }
