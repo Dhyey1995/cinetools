@@ -31,7 +31,7 @@ class BudgetCard extends Component {
                         <img src={Userimage} />
                     </div>
                     <div className>
-                        <p><span>Country -</span> {this.state.budgetData.country_id}</p>
+                        <p><span>Country -</span> {this.state.budgetData.country_name}</p>
                         <p><span>Producers -</span> {this.state.budgetData.producers}</p>
                         <p><span>Director -</span> {this.state.budgetData.director}</p>
                     </div>
