@@ -17,17 +17,6 @@ class Homepage extends Component {
             budgets: data.data
         });
     });
-
-
-      // fetch('https://betasite.online/laravelAPI/api/budget')
-      //     .then(res=> res.json())
-      //     .then(({ data }) => {
-      //         this.setState({
-      //             budgets: data,
-      //         })
-      //     });
-
-
   }
 
   render() {
@@ -70,7 +59,7 @@ class Homepage extends Component {
                                                             {this.state.budgets.map((budget , index) => {
                                                                 return ( <tr>
                                                                     <td>
-                                                                        <BudgetCard key={index} >{budget}</BudgetCard>
+                                                                        <BudgetCard>{budget}</BudgetCard>
                                                                     </td>
                                                                 </tr> )
                                                             })}
