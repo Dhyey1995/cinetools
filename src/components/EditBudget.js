@@ -23,7 +23,6 @@ class EditBudget extends React.Component {
                     email:budgets.email,
                     redirect: false,
                 });
-                console.log(budgets);
         });
     }
     handleSubmit = (event) => {
@@ -33,7 +32,6 @@ class EditBudget extends React.Component {
           .then(respones => {
               if (respones.data.status) {
                   console.log(respones.data.message);
-                  // return <Redirect to='/' />
                   this.props.history.push('/')
               } else {
                   console.log(respones.data.message);

@@ -1,8 +1,8 @@
 import React , { Component } from 'react';
 import Userimage from './../images/kayak.png';
-import {Modal , Button ,ButtonToolbar} from 'react-bootstrap';
-import { NavLink } from 'react-router-dom'
-// import EditBudgetModal from './EditBudgetModal.js';
+import { Button ,ButtonToolbar} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import Modal from 'react-responsive-modal';
 class BudgetCard extends Component {
 
     constructor(props) {
@@ -10,8 +10,17 @@ class BudgetCard extends Component {
         this.state = {
             budgetData:props.children,
             addModalShow:false,
+            open: false,
         };
     }
+
+    onOpenModal = () => {
+        this.setState({ open: true });
+    };
+
+    onCloseModal = () => {
+        this.setState({ open: false });
+    };
 
     render() {
         const addModalClose = () => {
@@ -24,6 +33,10 @@ class BudgetCard extends Component {
                     <span>Budget Total - $138270 USD</span>
                     <div className="table_btn action-btns">
                         <NavLink to={'/budgetEdit/'+this.state.budgetData.id}><Button variant="primary">Edit</Button></NavLink>
+                        <button onClick={this.onOpenModal}>Open modal</button>
+                        <Modal open={open} onClose={this.onCloseModal} center>
+                            <h2>Simple centered modal</h2>
+                        </Modal>
                     </div>
                 </div>
                 <div className="img-sec-info">
@@ -31,7 +44,7 @@ class BudgetCard extends Component {
                         <img src={Userimage} />
                     </div>
                     <div className>
-                        <p><span>Country -</span> {this.state.budgetData.country_name}</p>
+                        <p><span>Country -</span> {this.state.budgetData.country_id}</p>
                         <p><span>Producers -</span> {this.state.budgetData.producers}</p>
                         <p><span>Director -</span> {this.state.budgetData.director}</p>
                     </div>
